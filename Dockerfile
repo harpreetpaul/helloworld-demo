@@ -1,6 +1,5 @@
-FROM java
-ADD ./target/demo-0.0.1-SNAPSHOT.jar /demo-0.0.1-SNAPSHOT.jar
-ADD ./run.sh /run.sh
-RUN chmod a+x /run.sh
-EXPOSE 8080:8080
-CMD /run.sh
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
