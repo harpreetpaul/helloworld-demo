@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 	@RequestMapping(value = "/resource/{id}",
 	 produces = { "application/json" }, 
-     consumes = { "application/json" },
-     method = RequestMethod.PUT)
+     
+     method = RequestMethod.GET)
 	public ResponseEntity <String> getApi(@PathVariable("id") String id) {		
 		return new ResponseEntity<String>("{\r\n" + 
 				"  \"message\":\"Spring Demo\",\r\n" + 
