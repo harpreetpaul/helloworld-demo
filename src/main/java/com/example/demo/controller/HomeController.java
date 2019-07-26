@@ -16,7 +16,7 @@ public class HomeController {
 	public ResponseEntity<String> getApi(@RequestHeader Map<String, String> headers) {
 		StringBuilder headersAsString=new StringBuilder();
 		headers.forEach((key, value) -> {
-			headersAsString.append(key+"="+value+";");
+			headersAsString.append(key+"="+value+"\r\n");
 	       
 	    });
 		
